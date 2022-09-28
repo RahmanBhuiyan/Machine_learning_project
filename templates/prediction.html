@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container p-3 ">
+      <div class="mx-auto" style="width: 200px;">
+          Heart Disease prediction
+        </div>
+        <div>
+          <br><br><h2>{{prediction_test}}</h2>
+        </div>
+        <a class="btn btn-outline-dark" href="./" role="button">Back</a>
+      <form class="row g-3 needs-validation " novalidate action="/predict" method="POST">
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">BMI</label>
+            <input type="number" class="form-control" id="BMI" name="BMI"  required>
+          </div>
+
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">PhysicalHealth</label>
+            <input type="number" class="form-control" id="PhysicalHealth" name="PhysicalHealth" required>
+          </div>
+
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">MentalHealth</label>
+            <input type="number" class="form-control" id="MentalHealth" name="MentalHealth" required>
+          </div>          
+
+          <!-- <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">SleepTime</label>
+            <input type="number" class="form-control" id="SleepTime" name="SleepTime" required>
+          </div> -->
+
+          <div class="col-md-4">
+              <label for="validationCustom01" class="form-label">AgeCategory</label>
+              <input type="number" class="form-control" id="AgeCategory" name="AgeCategory"  required>
+          </div>
+          
+          <div>
+          <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">Smoking</label>
+            <select class="form-select" id="Smoking" name="Smoking" required>
+              <option selected disabled value="">Choose...</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+            </div>
+          </div>
+
+          <div>
+            <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">AlcoholDrinking</label>
+            <select class="form-select" id="AlcoholDrinking" name="AlcoholDrinking" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+          </div>
+
+          <div>
+          <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Stroke</label>
+          <select class="form-select" id="Stroke" name="Stroke" required>
+              <option selected disabled value="">Choose...</option>
+              <option>Yes</option>
+              <option>No</option>
+          </select>
+          </div>
+
+          <div>
+          <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">DiffWalking</label>
+            <select class="form-select" id="DiffWalking" name="DiffWalking" required>
+              <option selected disabled value="">Choose...</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+            </div>
+          </div>
+
+          <div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">Sex</label>
+              <select class="form-select" id="Sex" name="Sex" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+              </div>
+          </div>
+
+          <div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">Diabetic</label>
+              <select class="form-select" id="Diabetic" name="Diabetic" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>No(borderline diabetic)</option>
+                <option>Yes(during pregnancy)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">PhysicalActivity</label>
+              <select class="form-select" id="PhysicalActivity" name="PhysicalActivity" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+              </div>
+          </div>
+
+          <div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">Asthma</label>
+              <select class="form-select" id="Asthma" name="Asthma" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+              </div>
+          </div>
+
+          <div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">KidneyDisease</label>
+              <select class="form-select" id="KidneyDisease" name="KidneyDisease" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+              </div>
+          </div>
+
+          <div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">SkinCancer</label>
+              <select class="form-select" id="SkinCancer" name="SkinCancer" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+              </div>
+          </div>
+
+
+          <div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">GenHealth</label>
+              <select class="form-select" id="GenHealth" name="GenHealth" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Very good</option>
+                <option>Good</option>
+                <option>Excellent</option>
+                <option>Fair</option>
+                <option>Poor</option>
+              </select>
+              </div>
+          </div>
+
+          <div class="col-xs-1 text-center">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+    </div>
+  </body>
+</html>
+
+<!-- 
+BMI(int) PhysicalHealth(int)	MentalHealth(int)	SleepTime(int)	AgeCategory(int)	Smoking(string)	AlcoholDrinking(string)	Stroke(string)	DiffWalking(string)	Sex(string)	Diabetic(string)	PhysicalActivity(string)	Asthma(string)	KidneyDisease(string)	SkinCancer(string)  GenHealth(string)-->
+
+<!-- BMI     PhysicalHealth     MentalHealth     Age     Smoking     AlcoholDrinking     Stroke     DiffWalking     Sex     Diabetic     PhysicalActivity     GenHealth     Asthma     KidneyDisease     SkinCancer -->
